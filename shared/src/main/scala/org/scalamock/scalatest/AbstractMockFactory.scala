@@ -28,7 +28,7 @@ trait AbstractMockFactory extends TestSuiteMixin with MockFactoryBase { this: Te
 
   type ExpectationException = TestFailedException
 
-  abstract override def withFixture(test: NoArgTest): Outcome = {
+  abstract override protected def withFixture(test: NoArgTest): Outcome = {
 
     if (autoVerify) {
       withExpectations {
